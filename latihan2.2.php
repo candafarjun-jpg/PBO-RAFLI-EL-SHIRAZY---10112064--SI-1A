@@ -1,44 +1,31 @@
 <?php
-public string $namapembeli="ani"
-    public string $namaBarang="sabun"
-    public int $hargaBarang=5000;
-    public int $jumlahBarang=2;
-    public float $totalBayar;
-    public float $diskon;
-
-    public static float $pajak = 0.02
-
+if (isset($_POST['celsius'])) {
+    $c = $_POST['celsius'];
+    $fahrenheit = ($c * 9/5) + 32;
+    $kelvin = $c + 273.15;
 }
-
-class Belanja { // ini adalah class belanja
-
-
-
-    public ini $hargaBarang=5000;
-    public ini $jumlahBarang=2;
-    public float $totalBayar;
-    public float $diskon;
-
-    public static float $pajak = 0.02;
-
-    public function __construct {$namapembeli}{
-        $this->namapembeli = $namapembeli;
-    }
-
-public function tampilRincian {$namapembeli}: void{
-    echo "nama pembeli :" . $this->namapembeli . "<br>";
-    echo "nama barang :" . $this->namabarang . "<br>";
-    echo "harga barang :" . $this->hargabarang . "<br>";
-    echo "jumlah barang :" . $this->jumlahbarang . "<br>";
-
-}
-
-
-}
-
-$belanja = new Belanja(namapembeli: "ani");
-$belanja->tampilRincian(namapembeli: $belanja1->namapembeli);
-
-}
-
 ?>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Kalkulator Suhu</title>
+</head>
+<body>
+    <h2>Kalkulator Suhu (PHP)</h2>
+
+    <form method="post">
+        <label>Masukkan Suhu Celsius:</label><br>
+        <input type="number" name="celsius" step="any" required>
+        <br><br>
+        <button type="submit">Hitung</button>
+    </form>
+
+    <?php if (isset($fahrenheit)) { ?>
+        <h3>Hasil:</h3>
+        <p>Fahrenheit: <?= $fahrenheit ?></p>
+        <p>Kelvin: <?= $kelvin ?></p>
+    <?php } ?>
+</body>
+</html>
+class // ini adalah jumlah perhitungan
