@@ -1,4 +1,5 @@
 <?php
+class//ini adalah kalkulator suhu
 if (isset($_POST['celsius'])) {
     $c = $_POST['celsius'];
     $fahrenheit = ($c * 9/5) + 32;
@@ -28,4 +29,4 @@ if (isset($_POST['celsius'])) {
     <?php } ?>
 </body>
 </html>
-class // ini adalah jumlah perhitungan
+
