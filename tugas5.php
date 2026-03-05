@@ -1,33 +1,56 @@
 <?php
 
-// Input
-$kartu = "ya"; // isi "ya" atau "tidak"
-$totalBelanja = 334000;
+class DiskonBelanja {
 
-$diskon = 0;
+    public $kartu;
+    public $belanja;
+    public $diskon;
 
-if ($kartu == "ya") {
+    public function cekDiskon(){
 
-    if ($totalBelanja > 100000) {
-        $diskon = 15000;
-    } else if ($totalBelanja > 500000) {
-        $diskon = 50000;
-    }
+        if($this->kartu == 1){
 
-} else {
+            if($this->belanja > 500){
+                $this->diskon = "Belanja >500 RB diskon 15 RB";
+            }
+            else if($this->belanja > 100){
+                $this->diskon = "Belanja >100 RB diskon 50 RB";
+            }
 
-    if ($totalBelanja > 100000) {
-        $diskon = 5000;
+        }else{
+
+            if($this->belanja > 100){
+                $this->diskon = "Belanja >100 RB diskon 5 RB";
+            }
+
+        }
+
     }
 
 }
 
-// Perhitungan total bayar
-$totalBayar = $totalBelanja - $diskon;
+// objek 1
+$data1 = new DiskonBelanja();
+$data1->kartu = 1;
+$data1->belanja = 200;
+$data1->cekDiskon();
 
-// Output
-echo "Apakah ada kartu member: " . $kartu . "\n";
-echo "Total belanjaan: " . $totalBelanja . "\n";
-echo "Total Bayar: Rp " . $totalBayar;
+// objek 2
+$data2 = new DiskonBelanja();
+$data2->kartu = 1;
+$data2->belanja = 600;
+$data2->cekDiskon();
+
+// objek 3
+$data3 = new DiskonBelanja();
+$data3->kartu = 0;
+$data3->belanja = 150;
+$data3->cekDiskon();
+
+
+// output
+echo $data1->diskon . "<br>";
+echo $data2->diskon . "<br>";
+echo $data3->diskon . "<br>";
 
 ?>
