@@ -108,3 +108,20 @@ $diskon = $belanja->diskon($subtotal);
 $total = $belanja->total();
 
 echo "<tr>";
+echo "<td>".$no."</td>";
+echo "<td>".$belanja->nama."</td>";
+echo "<td>".($belanja->member ? "Ya" : "Tidak")."</td>";
+echo "<td>".$belanja->barang."</td>";
+echo "<td>".formatRupiah(angka: $subtotal)."</td>";
+echo "<td>".formatRupiah(angka: $diskon)."</td>";
+echo "<td>".formatRupiah(angka: $total)."</td>";
+
+echo "</tr>";
+
+$no++;
+
+}
+
+echo "</table>";
+
+?>
